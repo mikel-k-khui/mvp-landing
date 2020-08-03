@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'emails'
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,8 @@ WSGI_APPLICATION = 'mvp_landing.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+# SQL -> MySQL, PostgreSQL
+# NoSQL -> MongoDB -> Djongo
 
 DATABASES = {
     'default': {
