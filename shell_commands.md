@@ -11,7 +11,8 @@ __Accessing global variables/config in `settings.py`__
 ```python
 from django.conf import settings
 
-API_KEY = getattr(settings, 'API_KEY', 'default')
+API_KEY = getattr(settings, 'API_KEY', None)
+BASE_DIR = settings.BASE_DIR
 
 ```
 

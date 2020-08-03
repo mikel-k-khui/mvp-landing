@@ -25,13 +25,14 @@ SECRET_KEY = '%hvu5nonz$cioxvuv+fte!3t9)h5dcattr3_1va^5i^1f@bdq8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-API_KEY = os.environ.get("API_KEY")
+# TODO: env variables from 
+API_KEY = os.environ.get("THIS_API_KEY")
 
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# TODO: add new models
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,10 +55,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mvp_landing.urls'
 
+# TODO: add DIRS for templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +125,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# TODO: Local static files not served
+# Check django storages with AWS S3
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+# TODO: CDN - serving director
+STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')

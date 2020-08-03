@@ -1,0 +1,11 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <body>
+    <div style="background-image: url({% static 'img/beach.jpg' %})" >
+      <h1>Name?: {{object.name}}</h1>
+      <h2>Email: {{object.email}}</h2>
+      <h3>id: {{ id }}</h3>
+    </div>
+  </body>
+</html>
